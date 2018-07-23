@@ -1,6 +1,9 @@
-FROM openjdk:alpine
+FROM ubuntu:16.04
 
-LABEL maintainer "yusuke.mori <jiska.ym@gmail.com>"
+RUN apt-get update
+RUN apt-get install -y wget openjdk-8-jdk
+
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 RUN mkdir /usr/local/dynamodb
 WORKDIR /usr/local/dynamodb
